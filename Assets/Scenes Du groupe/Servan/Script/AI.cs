@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AI : Manager
+public class AI : MonoBehaviour
 {
     [SerializeField]
     protected LayerMask myLayerMask;
@@ -41,7 +41,7 @@ public class AI : Manager
     private Vector3 nextSalle;
     private NavMeshAgent Agent;
 
-    void Start()
+    protected void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
 
@@ -54,7 +54,7 @@ public class AI : Manager
         }
     }
 
-    void Update()
+    protected void Update()
     {
         GestionEtat();
         Debug.DrawLine(transform.position, Agent.destination, Color.black);
