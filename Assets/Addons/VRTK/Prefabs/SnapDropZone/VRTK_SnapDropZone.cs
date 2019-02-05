@@ -463,6 +463,7 @@ namespace VRTK
             CheckCanUnsnap(collider.GetComponentInParent<VRTK_InteractableObject>());
         }
 
+        //C'est ici pour combiner les objets entre eux QUENTIN !
         protected virtual void CheckCanSnap(VRTK_InteractableObject interactableObjectCheck)
         {
             if (interactableObjectCheck != null && ValidSnapObject(interactableObjectCheck, true))
