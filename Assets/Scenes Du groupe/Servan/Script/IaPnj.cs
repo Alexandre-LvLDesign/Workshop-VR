@@ -31,5 +31,6 @@ public class IaPnj : MonoBehaviour
         currentSalle = null;
         ptsInts = null;
         etat = Etat.SelectSalle;
+        canw8 = false;
     }
 }

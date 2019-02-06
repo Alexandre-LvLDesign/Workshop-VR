@@ -52,6 +52,7 @@ public class SafeWay : MonoBehaviour
         {
             currentAgent = agent;
             currentIaPnj = currentAgent.GetComponent<IaPnj>();
+            currentAnimator = currentAgent.GetComponent<Animator>();
             if(!currentIaPnj.Agent.hasPath && currentIaPnj.canw8 == true)
             {
                 currentIaPnj.T = Time.time;
