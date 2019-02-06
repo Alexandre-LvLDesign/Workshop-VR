@@ -55,11 +55,17 @@ public class SafeWay : MonoBehaviour
             currentAnimator = currentAgent.GetComponent<Animator>();
             if(!currentIaPnj.Agent.hasPath && currentIaPnj.canw8 == true)
             {
+                currentAnimator.SetBool("Idle", true);
+                currentAnimator.SetBool("Walk", false);
+
                 currentIaPnj.T = Time.time;
                 currentIaPnj.canw8 = false;
             }
             if (!currentIaPnj.Agent.hasPath && Time.time > currentIaPnj.T + 5 && currentIaPnj.canw8 == false)
             {
+                currentAnimator.SetBool("Walk", true);
+                currentAnimator.SetBool("Idle", false);
+
                 currentIaPnj.canw8 = true;
                 VerificationEtatAgent();
                 SetDestinationAgent();
