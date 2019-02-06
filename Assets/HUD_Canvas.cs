@@ -7,7 +7,7 @@ public class HUD_Canvas : MonoBehaviour
 
 {
 
-    public int HUD_Scriba = 1;
+    public int HUD_change = 1;
     public GameObject Current_obj;
     public GameObject Current_obj2;
     public GameObject Current_obj3;
@@ -15,10 +15,10 @@ public class HUD_Canvas : MonoBehaviour
 
     public void CogitatorHUD()
     {
-        HUD_Scriba++;
-        Debug.Log(HUD_Scriba);
+        HUD_change++;
+        Debug.Log(HUD_change);
 
-        switch (HUD_Scriba)
+        switch (HUD_change)
         {
             case 1:
                 Current_obj.SetActive(true);
