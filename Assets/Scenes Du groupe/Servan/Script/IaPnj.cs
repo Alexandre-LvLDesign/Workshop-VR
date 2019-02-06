@@ -7,20 +7,26 @@ public class IaPnj : MonoBehaviour
     [SerializeField]
     protected int stopdist;
 
-    public GameObject nextSalle;
+    public GameObject currentSalle;
     public GameObject ptsInts;
 
-    private NavMeshAgent Agent;
+    public NavMeshAgent Agent;
+    [SerializeField]
+    private ManagerIA managerIA;
 
-    void Start ()
+    public enum Etat
+    {
+        Attente,
+        SelectSalle,
+        PointInteretSalle,
+    }
+    public Etat etat;
+
+    void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
-        nextSalle = null;
+        currentSalle = null;
         ptsInts = null;
-}
-	
-	void Update ()
-    {
-        
-	}
+        etat = Etat.SelectSalle;
+    }
 }
