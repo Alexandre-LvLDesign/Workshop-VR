@@ -16,6 +16,8 @@ public class SafeWay : MonoBehaviour
     [SerializeField]
     private List<GameObject> ptsIntSalle3;
     [SerializeField]
+    private List<GameObject> ptsIntSalle4;
+    [SerializeField]
     private List<GameObject> listAgent;
 
     private GameObject currentAgent;
@@ -133,6 +135,10 @@ public class SafeWay : MonoBehaviour
         if (currentIaPnj.currentSalle == salles[3])
         {
             pointsInteret = ptsIntSalle3;
+        }
+        if (currentIaPnj.currentSalle == salles[4])
+        {
+            pointsInteret = ptsIntSalle4;
         }
     }
 }
