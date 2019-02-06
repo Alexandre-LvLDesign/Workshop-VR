@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class HUD_Canvas : MonoBehaviour
 
 {
-
     public int HUD_change = 1;
     public GameObject Current_obj;
     public GameObject Current_obj2;
@@ -22,27 +21,21 @@ public class HUD_Canvas : MonoBehaviour
         {
             case 1:
                 Current_obj.SetActive(true);
-                Current_obj2.SetActive(false);
-                Current_obj3.SetActive(false);
+                //Current_obj2.SetActive(false);
+                //Current_obj3.SetActive(false);
                 break;
 
             case 2:
                 Current_obj.SetActive(false);
                 Current_obj2.SetActive(true);
-                Current_obj3.SetActive(false);
+                //Current_obj3.SetActive(false);
                 break;
 
             case 3:
-                Current_obj.SetActive(false);
+                //Current_obj.SetActive(false);
                 Current_obj2.SetActive(false);
                 Current_obj3.SetActive(true);
                 break;
-
-
         }
-
     }
-
-
-
 }
