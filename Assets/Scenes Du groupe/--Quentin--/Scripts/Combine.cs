@@ -5,11 +5,18 @@ using VRTK;
 
 public class Combine : VRTK_SnapDropZone
 {
+    [Header("Combine Settings")]
+
+    public GameObject targetPrefab;
+    public GameObject bulletPrefab;
+
     protected virtual void OnTriggerStay(Collider collider)
     {
-
-        CheckCanSnap(collider.GetComponentInParent<VRTK_InteractableObject>());
-        
+        if(bulletPrefab.transform.rotation == targetPrefab.transform.rotation)
+        {
+            Debug.Log("yeah");
+            CheckCanSnap(collider.GetComponentInParent<VRTK_InteractableObject>());
+        }
     }
 
     protected override void OnTriggerEnter(Collider collider)
