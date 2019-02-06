@@ -105,20 +105,17 @@ public class ManagerIA : MonoBehaviour
         compteurPtsInt = 0;
         foreach (GameObject ptsPris in pointsInteret)
         {
-            if(!pointIntPris.Contains(ptsPris))
+            if(pointIntPris.Contains(ptsPris))
             {
                 compteurPtsInt += 1;
-                Debug.Log(currentIaPnj.currentSalle);
             }
         }
-        if(compteurPtsInt == pointsInteret.Count)
+        if(compteurPtsInt >= pointsInteret.Count)
         {
             currentIaPnj.etat = IaPnj.Etat.SelectSalle;
         }
         else
         {
-            Debug.Log(compteurPtsInt);
-            Debug.Log(pointsInteret.Count);
             VerificationPointLibre();
         }
     }
@@ -134,8 +131,13 @@ public class ManagerIA : MonoBehaviour
             }
             else
             {
+                nextDestinationPointInt = null;
                 rng = Random.Range(0, pointsInteret.Count);
             }
+        }
+        if(nextDestinationPointInt == null)
+        {
+            currentIaPnj.etat = IaPnj.Etat.SelectSalle;
         }
     }
 
@@ -146,26 +148,21 @@ public class ManagerIA : MonoBehaviour
 
     void DetectionSalle()
     {
-        Debug.Log(currentIaPnj.currentSalle);
         if (currentIaPnj.currentSalle == salles[0])
         {
             pointsInteret = ptsIntSalle0;
-            Debug.Log("salle0");
         }
         if (currentIaPnj.currentSalle == salles[1])
         {
             pointsInteret = ptsIntSalle1;
-            Debug.Log("salle1");
         }
         if (currentIaPnj.currentSalle == salles[2])
         {
             pointsInteret = ptsIntSalle2;
-            Debug.Log("salle2");
         }
         if (currentIaPnj.currentSalle == salles[3])
         {
             pointsInteret = ptsIntSalle3;
-            Debug.Log("salle3");
         }
     }
 }
