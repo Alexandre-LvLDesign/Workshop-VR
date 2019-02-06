@@ -14,6 +14,9 @@ public class IaPnj : MonoBehaviour
     [SerializeField]
     private ManagerIA managerIA;
 
+    public float T;
+    public bool canw8;
+
     public enum Etat
     {
         Attente,

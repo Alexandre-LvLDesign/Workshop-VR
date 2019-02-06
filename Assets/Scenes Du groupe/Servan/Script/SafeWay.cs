@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class ManagerIA : MonoBehaviour
+public class SafeWay : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> salles;
@@ -27,18 +26,20 @@ public class ManagerIA : MonoBehaviour
 
     public List<GameObject> pointIntPris;
 
+    [SerializeField]
+    private Animator currentAnimator;
+
     private int rng;
     private int startRng;
     private int rngSalle;
-    private int compteurPtsInt;
 
-    void Start ()
+    void Start()
     {
         pointIntPris = new List<GameObject>();
         rngSalle = 0;
     }
 
-	void Update ()
+    void Update()
     {
         ParcourirAgent();
     }
@@ -49,8 +50,14 @@ public class ManagerIA : MonoBehaviour
         {
             currentAgent = agent;
             currentIaPnj = currentAgent.GetComponent<IaPnj>();
-            if (!currentIaPnj.Agent.hasPath)
+            if(!currentIaPnj.Agent.hasPath && currentIaPnj.canw8 == true)
             {
+                currentIaPnj.T = Time.time;
+                currentIaPnj.canw8 = false;
+            }
+            if (!currentIaPnj.Agent.hasPath && Time.time > currentIaPnj.T + 5 && currentIaPnj.canw8 == false)
+            {
+                currentIaPnj.canw8 = true;
                 VerificationEtatAgent();
                 SetDestinationAgent();
                 nextDestinationSalle = null;
@@ -93,49 +100,12 @@ public class ManagerIA : MonoBehaviour
         DetectionSalle();
         rng = Random.Range(0, pointsInteret.Count);
         startRng = rng;
-        VerificationPtsPris();
         nextDestinationPointInt = pointsInteret[rng];
         nextObj = nextDestinationPointInt.transform.position;
         pointIntPris.Add(nextDestinationPointInt);
         currentIaPnj.ptsInts = nextDestinationPointInt;
-    }
-
-    void VerificationPtsPris()
-    {
-        compteurPtsInt = 0;
-        foreach (GameObject ptsPris in pointsInteret)
-        {
-            if(pointIntPris.Contains(ptsPris))
-            {
-                compteurPtsInt += 1;
-            }
-        }
-        if(compteurPtsInt >= pointsInteret.Count)
-        {
-            currentIaPnj.etat = IaPnj.Etat.SelectSalle;
-        }
-        else
-        {
-            VerificationPointLibre();
-        }
-    }
-
-    void VerificationPointLibre()
-    {
-        foreach (GameObject ptsPris in pointIntPris)
-        {
-            if(pointsInteret[rng] != ptsPris)
-            {
-                nextDestinationPointInt = pointsInteret[rng];
-                currentIaPnj.etat = IaPnj.Etat.SelectSalle;
-            }
-            else
-            {
-                nextDestinationPointInt = null;
-                rng = Random.Range(0, pointsInteret.Count);
-            }
-        }
-        if(nextDestinationPointInt == null)
+        rng = Random.Range(0, 10);
+        if(rng >= 8)
         {
             currentIaPnj.etat = IaPnj.Etat.SelectSalle;
         }
