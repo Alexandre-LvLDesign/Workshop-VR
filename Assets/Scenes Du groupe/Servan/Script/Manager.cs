@@ -19,31 +19,21 @@ public class Manager : MonoBehaviour
     [SerializeField]
     private List<GameObject> listAgent;
 
-    private enum Etat
-    {
-        Attente,
-        SelectSalle,
-        PointInteretSalle,
-    }
-    private Etat etat;
+    private List<GameObject> pointIntPris;
+
+    private IaPnj iaPnj;
 
     private int s;
 
     private void Start()
     {
-        foreach (GameObject a in listAgent)
-        {
-            if (!a.GetComponent<NavMeshAgent>().hasPath)
-            {
-                ChangementSalle();
-            }
-        }
+        pointIntPris = new List<GameObject>();
     }
-
 
     private void Update()
     {
-        ChangementPtsInt();
+        SelectEtat();
+        RecupDestination();
     }
 
     protected void ChangementSalle()
@@ -51,61 +41,13 @@ public class Manager : MonoBehaviour
         foreach (GameObject a in listAgent)
         {
             s = Random.Range(0, salles.Count);
-            Debug.Log(s);
             a.GetComponent<NavMeshAgent>().destination = salles[s].transform.position;
-            a.GetComponent<IaPnj>().nextSalle = salles[s];
+            a.GetComponent<IaPnj>().currentSalle = salles[s];
+            a.GetComponent<IaPnj>().etat = IaPnj.Etat.PointInteretSalle;
         }
     }
 
     protected void ChangementPtsInt()
-    {
-        foreach (GameObject a in listAgent)
-        {
-            if (a.GetComponent<IaPnj>().nextSalle = salles[0])
-            {
-                pointsInteret = ptsIntSalle0;
-            }
-            if (a.GetComponent<IaPnj>().nextSalle = salles[1])
-            {
-                pointsInteret = ptsIntSalle1;
-            }
-            if (a.GetComponent<IaPnj>().nextSalle = salles[2])
-            {
-                pointsInteret = ptsIntSalle2;
-            }
-            if (a.GetComponent<IaPnj>().nextSalle = salles[3])
-            {
-                pointsInteret = ptsIntSalle3;
-            }
-            foreach (GameObject i in pointsInteret)
-            {
-                Debug.Log(i);
-            }
-        }
-        foreach (GameObject a in listAgent)
-        {
-            foreach (GameObject b in listAgent)
-            {
-                if(a != b)
-                {
-                    foreach (GameObject p in pointsInteret)
-                    {
-                        if (p != b.GetComponent<IaPnj>().ptsInts)
-                        {
-                            a.GetComponent<NavMeshAgent>().destination = p.transform.position;
-                            a.GetComponent<IaPnj>().ptsInts = p;
-                        }
-                    }
-                }
-            }
-            if (!a.GetComponent<NavMeshAgent>().hasPath)
-            {
-                etat = Etat.SelectSalle;
-            }
-        }
-    }
-
-    private void SelectPtsIntSalle()
     {
         
     }
@@ -117,17 +59,29 @@ public class Manager : MonoBehaviour
 
     private void SelectEtat()
     {
-        if(etat == Etat.PointInteretSalle)
+        foreach (GameObject a in listAgent)
         {
-            ChangementPtsInt();
+            if(a.GetComponent<IaPnj>().etat == IaPnj.Etat.PointInteretSalle)
+            {
+                ChangementPtsInt();
+            }
+            if(a.GetComponent<IaPnj>().etat == IaPnj.Etat.SelectSalle)
+            {
+                ChangementSalle();
+            }
+            if(a.GetComponent<IaPnj>().etat == IaPnj.Etat.Attente)
+            {
+                Attente();
+            }
         }
-        if(etat == Etat.SelectSalle)
+    }
+
+    private void RecupDestination()
+    {
+        pointIntPris.Clear();
+        foreach (GameObject a in listAgent)
         {
-            ChangementSalle();
-        }
-        if(etat == Etat.Attente)
-        {
-            Attente();
+            pointIntPris.Add(a.GetComponent<IaPnj>().ptsInts);
         }
     }
 }
