@@ -34,11 +34,17 @@ public class SafeWay : MonoBehaviour
     private int rng;
     private int startRng;
     private int rngSalle;
+    [SerializeField]
+    private int tempsAttente;
 
     void Start()
     {
         pointIntPris = new List<GameObject>();
         rngSalle = 0;
+        if(tempsAttente == 0)
+        {
+            tempsAttente = 5;
+        }
     }
 
     void Update()
@@ -55,11 +61,17 @@ public class SafeWay : MonoBehaviour
             currentAnimator = currentAgent.GetComponent<Animator>();
             if(!currentIaPnj.Agent.hasPath && currentIaPnj.canw8 == true)
             {
+                currentAnimator.SetBool("Idle", true);
+                currentAnimator.SetBool("Walk", false);
+
                 currentIaPnj.T = Time.time;
                 currentIaPnj.canw8 = false;
             }
-            if (!currentIaPnj.Agent.hasPath && Time.time > currentIaPnj.T + 5 && currentIaPnj.canw8 == false)
+            if (!currentIaPnj.Agent.hasPath && Time.time > currentIaPnj.T + tempsAttente && currentIaPnj.canw8 == false)
             {
+                currentAnimator.SetBool("Walk", true);
+                currentAnimator.SetBool("Idle", false);
+
                 currentIaPnj.canw8 = true;
                 VerificationEtatAgent();
                 SetDestinationAgent();
