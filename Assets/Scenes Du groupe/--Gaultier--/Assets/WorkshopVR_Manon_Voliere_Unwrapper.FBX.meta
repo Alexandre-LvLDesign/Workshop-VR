@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: 9751ff3cddfaf014c81de9abcd68b110
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature Arrete
+    100002: Armature Arrete001
+    100004: Armature Arrete002
+    100006: Armature Arrete003
+    100008: Armature Arrete004
+    100010: Arrete
+    100012: Barre horizontal
+    100014: Barre horizontal001
+    100016: Barre horizontal002
+    100018: Barre horizontal003
+    100020: BLOCKOUT_secondary_structure_01
+    100022: Group001
+    100024: Group002
+    100026: Group003
+    100028: Group004
+    100030: Group005
+    100032: Group007
+    100034: Group008
+    100036: Group009
+    100038: Group010
+    100040: Group011
+    100042: Group012
+    100044: LampePlafond
+    100046: Object001
+    100048: Object006
+    100050: Object007
+    100052: Object008
+    100054: Object009
+    100056: Object010
+    100058: Object011
+    100060: Object012
+    100062: Object013
+    100064: Object014
+    100066: Object015
+    100068: Object016
+    100070: Object017
+    100072: Object018
+    100074: Object019
+    100076: Object020
+    100078: Object021
+    100080: Object022
+    100082: Object023
+    100084: Object024
+    100086: Object025
+    100088: Object026
+    100090: Object027
+    100092: Object028
+    100094: Object029
+    100096: Object030
+    100098: Object031
+    100100: Object033
+    100102: Object034
+    100104: Object035
+    100106: Object036
+    100108: Object037
+    100110: Object038
+    100112: Object039
+    100114: Object040
+    100116: Object041
+    100118: Object042
+    100120: Object043
+    100122: Object044
+    100124: Object045
+    100126: Object046
+    100128: Object047
+    100130: Object048
+    100132: Object049
+    100134: Object050
+    100136: Object051
+    100138: Object052
+    100140: Object053
+    100142: Object055
+    100144: Object056
+    100146: Object057
+    100148: Object058
+    100150: Object059
+    100152: Object061
+    100154: Object062
+    100156: Object063
+    100158: Object064
+    100160: Object065
+    100162: Object066
+    100164: Object067
+    100166: Object068
+    100168: Object069
+    100170: Object070
+    100172: Object071
+    100174: Object072
+    100176: Object073
+    100178: Object074
+    100180: Object075
+    100182: Object076
+    100184: Object077
+    100186: Object078
+    100188: Object079
+    100190: Object080
+    100192: Object081
+    100194: Object082
+    100196: Object083
+    100198: Object084
+    100200: Object085
+    100202: Object086
+    100204: //RootNode
+    400000: Armature Arrete
+    400002: Armature Arrete001
+    400004: Armature Arrete002
+    400006: Armature Arrete003
+    400008: Armature Arrete004
+    400010: Arrete
+    400012: Barre horizontal
+    400014: Barre horizontal001
+    400016: Barre horizontal002
+    400018: Barre horizontal003
+    400020: BLOCKOUT_secondary_structure_01
+    400022: Group001
+    400024: Group002
+    400026: Group003
+    400028: Group004
+    400030: Group005
+    400032: Group007
+    400034: Group008
+    400036: Group009
+    400038: Group010
+    400040: Group011
+    400042: Group012
+    400044: LampePlafond
+    400046: Object001
+    400048: Object006
+    400050: Object007
+    400052: Object008
+    400054: Object009
+    400056: Object010
+    400058: Object011
+    400060: Object012
+    400062: Object013
+    400064: Object014
+    400066: Object015
+    400068: Object016
+    400070: Object017
+    400072: Object018
+    400074: Object019
+    400076: Object020
+    400078: Object021
+    400080: Object022
+    400082: Object023
+    400084: Object024
+    400086: Object025
+    400088: Object026
+    400090: Object027
+    400092: Object028
+    400094: Object029
+    400096: Object030
+    400098: Object031
+    400100: Object033
+    400102: Object034
+    400104: Object035
+    400106: Object036
+    400108: Object037
+    400110: Object038
+    400112: Object039
+    400114: Object040
+    400116: Object041
+    400118: Object042
+    400120: Object043
+    400122: Object044
+    400124: Object045
+    400126: Object046
+    400128: Object047
+    400130: Object048
+    400132: Object049
+    400134: Object050
+    400136: Object051
+    400138: Object052
+    400140: Object053
+    400142: Object055
+    400144: Object056
+    400146: Object057
+    400148: Object058
+    400150: Object059
+    400152: Object061
+    400154: Object062
+    400156: Object063
+    400158: Object064
+    400160: Object065
+    400162: Object066
+    400164: Object067
+    400166: Object068
+    400168: Object069
+    400170: Object070
+    400172: Object071
+    400174: Object072
+    400176: Object073
+    400178: Object074
+    400180: Object075
+    400182: Object076
+    400184: Object077
+    400186: Object078
+    400188: Object079
+    400190: Object080
+    400192: Object081
+    400194: Object082
+    400196: Object083
+    400198: Object084
+    400200: Object085
+    400202: Object086
+    400204: //RootNode
+    2100000: 'Material #2'
+    2300000: Armature Arrete
+    2300002: Armature Arrete001
+    2300004: Armature Arrete002
+    2300006: Armature Arrete003
+    2300008: Armature Arrete004
+    2300010: Barre horizontal
+    2300012: Barre horizontal001
+    2300014: Barre horizontal002
+    2300016: Barre horizontal003
+    2300018: Object001
+    2300020: Object006
+    2300022: Object007
+    2300024: Object008
+    2300026: Object009
+    2300028: Object010
+    2300030: Object011
+    2300032: Object012
+    2300034: Object013
+    2300036: Object014
+    2300038: Object015
+    2300040: Object016
+    2300042: Object017
+    2300044: Object018
+    2300046: Object019
+    2300048: Object020
+    2300050: Object021
+    2300052: Object022
+    2300054: Object023
+    2300056: Object024
+    2300058: Object025
+    2300060: Object026
+    2300062: Object027
+    2300064: Object028
+    2300066: Object029
+    2300068: Object030
+    2300070: Object031
+    2300072: Object033
+    2300074: Object034
+    2300076: Object035
+    2300078: Object036
+    2300080: Object037
+    2300082: Object038
+    2300084: Object039
+    2300086: Object040
+    2300088: Object041
+    2300090: Object042
+    2300092: Object043
+    2300094: Object044
+    2300096: Object045
+    2300098: Object046
+    2300100: Object047
+    2300102: Object048
+    2300104: Object049
+    2300106: Object050
+    2300108: Object051
+    2300110: Object052
+    2300112: Object053
+    2300114: Object055
+    2300116: Object056
+    2300118: Object057
+    2300120: Object058
+    2300122: Object059
+    2300124: Object061
+    2300126: Object062
+    2300128: Object063
+    2300130: Object064
+    2300132: Object065
+    2300134: Object066
+    2300136: Object067
+    2300138: Object068
+    2300140: Object069
+    2300142: Object070
+    2300144: Object071
+    2300146: Object072
+    2300148: Object073
+    2300150: Object074
+    2300152: Object075
+    2300154: Object076
+    2300156: Object077
+    2300158: Object078
+    2300160: Object079
+    2300162: Object080
+    2300164: Object081
+    2300166: Object082
+    2300168: Object083
+    2300170: Object084
+    2300172: Object085
+    2300174: Object086
+    3300000: Armature Arrete
+    3300002: Armature Arrete001
+    3300004: Armature Arrete002
+    3300006: Armature Arrete003
+    3300008: Armature Arrete004
+    3300010: Barre horizontal
+    3300012: Barre horizontal001
+    3300014: Barre horizontal002
+    3300016: Barre horizontal003
+    3300018: Object001
+    3300020: Object006
+    3300022: Object007
+    3300024: Object008
+    3300026: Object009
+    3300028: Object010
+    3300030: Object011
+    3300032: Object012
+    3300034: Object013
+    3300036: Object014
+    3300038: Object015
+    3300040: Object016
+    3300042: Object017
+    3300044: Object018
+    3300046: Object019
+    3300048: Object020
+    3300050: Object021
+    3300052: Object022
+    3300054: Object023
+    3300056: Object024
+    3300058: Object025
+    3300060: Object026
+    3300062: Object027
+    3300064: Object028
+    3300066: Object029
+    3300068: Object030
+    3300070: Object031
+    3300072: Object033
+    3300074: Object034
+    3300076: Object035
+    3300078: Object036
+    3300080: Object037
+    3300082: Object038
+    3300084: Object039
+    3300086: Object040
+    3300088: Object041
+    3300090: Object042
+    3300092: Object043
+    3300094: Object044
+    3300096: Object045
+    3300098: Object046
+    3300100: Object047
+    3300102: Object048
+    3300104: Object049
+    3300106: Object050
+    3300108: Object051
+    3300110: Object052
+    3300112: Object053
+    3300114: Object055
+    3300116: Object056
+    3300118: Object057
+    3300120: Object058
+    3300122: Object059
+    3300124: Object061
+    3300126: Object062
+    3300128: Object063
+    3300130: Object064
+    3300132: Object065
+    3300134: Object066
+    3300136: Object067
+    3300138: Object068
+    3300140: Object069
+    3300142: Object070
+    3300144: Object071
+    3300146: Object072
+    3300148: Object073
+    3300150: Object074
+    3300152: Object075
+    3300154: Object076
+    3300156: Object077
+    3300158: Object078
+    3300160: Object079
+    3300162: Object080
+    3300164: Object081
+    3300166: Object082
+    3300168: Object083
+    3300170: Object084
+    3300172: Object085
+    3300174: Object086
+    4300000: Object009
+    4300002: Object008
+    4300004: Object007
+    4300006: Object006
+    4300008: Object001
+    4300010: Armature Arrete
+    4300012: Armature Arrete001
+    4300014: Armature Arrete002
+    4300016: Armature Arrete003
+    4300018: Armature Arrete004
+    4300020: Object026
+    4300022: Object038
+    4300024: Barre horizontal
+    4300026: Barre horizontal001
+    4300028: Barre horizontal002
+    4300030: Barre horizontal003
+    4300032: Object085
+    4300034: Object017
+    4300036: Object018
+    4300038: Object019
+    4300040: Object039
+    4300042: Object040
+    4300044: Object041
+    4300046: Object043
+    4300048: Object042
+    4300050: Object025
+    4300052: Object024
+    4300054: Object023
+    4300056: Object022
+    4300058: Object021
+    4300060: Object020
+    4300062: Object086
+    4300064: Object029
+    4300066: Object028
+    4300068: Object027
+    4300070: Object030
+    4300072: Object031
+    4300074: Object053
+    4300076: Object033
+    4300078: Object034
+    4300080: Object035
+    4300082: Object036
+    4300084: Object037
+    4300086: Object013
+    4300088: Object010
+    4300090: Object011
+    4300092: Object012
+    4300094: Object016
+    4300096: Object015
+    4300098: Object014
+    4300100: Object084
+    4300102: Object083
+    4300104: Object082
+    4300106: Object079
+    4300108: Object080
+    4300110: Object081
+    4300112: Object071
+    4300114: Object070
+    4300116: Object069
+    4300118: Object066
+    4300120: Object067
+    4300122: Object068
+    4300124: Object065
+    4300126: Object064
+    4300128: Object059
+    4300130: Object061
+    4300132: Object062
+    4300134: Object063
+    4300136: Object050
+    4300138: Object051
+    4300140: Object052
+    4300142: Object048
+    4300144: Object049
+    4300146: Object047
+    4300148: Object046
+    4300150: Object045
+    4300152: Object044
+    4300154: Object073
+    4300156: Object075
+    4300158: Object074
+    4300160: Object072
+    4300162: Object077
+    4300164: Object078
+    4300166: Object076
+    4300168: Object055
+    4300170: Object056
+    4300172: Object058
+    4300174: Object057
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
