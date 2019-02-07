@@ -3684,6 +3684,7 @@ MonoBehaviour:
   - {fileID: 2112229714}
   pointIntPris: []
   currentAnimator: {fileID: 0}
+  tempsAttente: 0
 --- !u!1 &1750784587
 GameObject:
   m_ObjectHideFlags: 0
