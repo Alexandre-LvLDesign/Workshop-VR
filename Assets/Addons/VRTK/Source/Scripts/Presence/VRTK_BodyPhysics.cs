@@ -1073,6 +1073,7 @@ namespace VRTK
                 {
                     bodyColliderContainer = CreateColliderContainer(BODY_COLLIDER_CONTAINER_NAME, playArea);
                     bodyColliderContainer.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+                    bodyColliderContainer.gameObject.tag = "Player";
                 }
 
                 bodyCollider = GenerateCapsuleCollider(bodyColliderContainer, bodyRadius);
