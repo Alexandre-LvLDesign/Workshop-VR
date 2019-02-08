@@ -4,34 +4,51 @@ using UnityEngine;
 
 public class SwapAudio : MonoBehaviour 
 {
-    private float AVolume1 = 1f;
-    private float AVolume2 = 0;
+
     public AudioClip BarClip;
     public AudioClip ThermesClip;
     public AudioSource m_Bar;
+    public AudioSource m_Thermes;
+
+    private void Update() 
+    {
+      
+
+
+    }
+
     private void OnTriggerEnter(Collider other) 
     {
-
-        if (m_Bar.clip = ThermesClip)
+        if (other.gameObject.tag  == "Player")
+            
         {
-            m_Bar.clip = BarClip;
-            m_Bar.Play();
-        }
-        if (m_Bar.clip = BarClip)
-        {
-            m_Bar.clip = ThermesClip;
-            m_Bar.Play();
-
+            ToggleClip(true); 
         }
     }
-    private void OnTriggerExit(Collider other) 
+
+        private void OnTriggerExit(Collider other) 
     {
-        m_Bar.Stop();
-        if (m_Bar.clip = ThermesClip) 
+        if (other.gameObject.tag  == "Player")
+            
+        {
+            ToggleClip(false); 
+        }
+    }
+    private void ToggleClip (bool IsEnter)
+    {
+        if (IsEnter == false)
         {
             m_Bar.clip = BarClip;
             m_Bar.Play();
+            m_Thermes.Stop();
         }
+        else
+        {
+            m_Thermes.clip = ThermesClip;
+            m_Bar.Stop();
+            m_Thermes.Play();
+            
+        }
+    
     }
-
 }
