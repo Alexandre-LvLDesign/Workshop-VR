@@ -1145,6 +1145,10 @@ Prefab:
       propertyPath: m_Name
       value: Belt
       objectReference: {fileID: 0}
+    - target: {fileID: 1015053965617432, guid: 2256e84a9a492ba419831b979c2d4826, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2256e84a9a492ba419831b979c2d4826, type: 2}
   m_IsPrefabAsset: 0
