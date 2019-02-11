@@ -5,19 +5,19 @@ using VRTK;
 
 public class Belt_Manager : MonoBehaviour {
 
-    [SerializeField] VRTK_TransformFollow tf;
-    public Transform t;
+    [SerializeField] VRTK_TransformFollow transformFollowScript;
+    public Transform transformToFollow;
 
     private void OnEnable()
     {
-        //tf = GetComponent<VRTK_TransformFollow>();
+        //transformFollowScript = GetComponent<VRTK_TransformFollow>();
         StartCoroutine(MyCouroutine());
     }
 
 	IEnumerator MyCouroutine()
     {
         yield return null;
-        t = VRTK_DeviceFinder.DeviceTransform(VRTK_DeviceFinder.Devices.Headset);
-        
+        transformToFollow = VRTK_DeviceFinder.DeviceTransform(VRTK_DeviceFinder.Devices.Headset);
+        transformFollowScript.gameObjectToFollow = transformToFollow.gameObject;
     }
 }
