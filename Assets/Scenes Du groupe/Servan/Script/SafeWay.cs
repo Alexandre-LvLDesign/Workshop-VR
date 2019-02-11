@@ -26,7 +26,7 @@ public class SafeWay : MonoBehaviour
     private GameObject nextDestinationPointInt;
     private Vector3 nextObj;
 
-    public List<GameObject> pointIntPris;
+    //public List<GameObject> pointIntPris;
 
     [SerializeField]
     private Animator currentAnimator;
@@ -39,7 +39,7 @@ public class SafeWay : MonoBehaviour
 
     void Start()
     {
-        pointIntPris = new List<GameObject>();
+        //pointIntPris = new List<GameObject>();
         rngSalle = 0;
         if(tempsAttente == 0)
         {
@@ -115,7 +115,7 @@ public class SafeWay : MonoBehaviour
         startRng = rng;
         nextDestinationPointInt = pointsInteret[rng];
         nextObj = nextDestinationPointInt.transform.position;
-        pointIntPris.Add(nextDestinationPointInt);
+        //pointIntPris.Add(nextDestinationPointInt);
         currentIaPnj.ptsInts = nextDestinationPointInt;
         rng = Random.Range(0, 10);
         if(rng >= 8)
