@@ -50,7 +50,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580716422195010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.62, y: 0, z: 18.74}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4232924673110766}
@@ -63,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1491048816076342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0.52986395, z: 25.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4206268640506836}
@@ -80,8 +80,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 21.000002, y: 9, z: 12}
-  m_Center: {x: 0.99999905, y: 4, z: 0.5}
+  m_Size: {x: 22.264397, y: 10.547247, z: 16.846352}
+  m_Center: {x: 1.6321964, y: 3.2263765, z: 2.9231758}
 --- !u!114 &114481686760326540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,3 +96,4 @@ MonoBehaviour:
   BarClip: {fileID: 8300000, guid: d6d1bff2643d83c4b831eb09db531b54, type: 3}
   ThermesClip: {fileID: 8300000, guid: 44447cdd9b0538b458391a07b34f769b, type: 3}
   m_Bar: {fileID: 0}
+  m_Thermes: {fileID: 0}
