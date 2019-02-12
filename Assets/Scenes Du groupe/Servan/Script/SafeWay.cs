@@ -26,7 +26,6 @@ public class SafeWay : MonoBehaviour
     private GameObject nextDestinationPointInt;
     private Vector3 nextObj;
 
-    //public List<GameObject> pointIntPris;
 
     [SerializeField]
     private Animator currentAnimator;
@@ -39,7 +38,6 @@ public class SafeWay : MonoBehaviour
 
     void Start()
     {
-        //pointIntPris = new List<GameObject>();
         rngSalle = 0;
         if(tempsAttente == 0)
         {
@@ -59,18 +57,16 @@ public class SafeWay : MonoBehaviour
             currentAgent = agent;
             currentIaPnj = currentAgent.GetComponent<IaPnj>();
             currentAnimator = currentAgent.GetComponent<Animator>();
-            if(!currentIaPnj.Agent.hasPath && currentIaPnj.canw8 == true)
+            if(!currentIaPnj.Agent.hasPath && currentIaPnj.canWait == true)
             {
                 currentAnimator.SetBool("IsWalking", false);
-
-                currentIaPnj.T = Time.time;
-                currentIaPnj.canw8 = false;
+                currentIaPnj.startWaitTime = Time.time;
+                currentIaPnj.canWait = false;
             }
-            if (!currentIaPnj.Agent.hasPath && Time.time > currentIaPnj.T + tempsAttente && currentIaPnj.canw8 == false)
+            if (!currentIaPnj.Agent.hasPath && Time.time > currentIaPnj.startWaitTime + tempsAttente && currentIaPnj.canWait == false)
             {
                 currentAnimator.SetBool("IsWalking", true);
-
-                currentIaPnj.canw8 = true;
+                currentIaPnj.canWait = true;
                 VerificationEtatAgent();
                 SetDestinationAgent();
                 nextDestinationSalle = null;
@@ -115,7 +111,6 @@ public class SafeWay : MonoBehaviour
         startRng = rng;
         nextDestinationPointInt = pointsInteret[rng];
         nextObj = nextDestinationPointInt.transform.position;
-        //pointIntPris.Add(nextDestinationPointInt);
         currentIaPnj.ptsInts = nextDestinationPointInt;
         rng = Random.Range(0, 10);
         if(rng >= 8)

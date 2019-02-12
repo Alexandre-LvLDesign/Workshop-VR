@@ -14,8 +14,8 @@ public class IaPnj : MonoBehaviour
     [SerializeField]
     private ManagerIA managerIA;
 
-    public float T;
-    public bool canw8;
+    public float startWaitTime;
+    public bool canWait;
 
     public enum Etat
     {
@@ -31,6 +31,14 @@ public class IaPnj : MonoBehaviour
         currentSalle = null;
         ptsInts = null;
         etat = Etat.SelectSalle;
-        canw8 = false;
+        canWait = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<IaPnj>())
+        {
+            
+        }
     }
 }
