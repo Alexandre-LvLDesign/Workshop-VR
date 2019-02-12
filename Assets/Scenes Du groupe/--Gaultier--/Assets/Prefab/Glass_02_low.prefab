@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4268830315239748}
   - component: {fileID: 33805386773777402}
   - component: {fileID: 23878653042647304}
+  - component: {fileID: 65619883012372732}
   m_Layer: 0
   m_Name: Glass_02_low
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1726861644678718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4287143, y: 0.26594537, z: 3.207133}
+  m_LocalPosition: {x: -0.65103936, y: 1.36812, z: -4.766429}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4268830315239748}
@@ -112,3 +113,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1545432783271258}
   m_Mesh: {fileID: 4300000, guid: 16355f2eda6907d4799e1b03063e44a2, type: 3}
+--- !u!65 &65619883012372732
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545432783271258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13427252, y: 0.21485788, z: 0.13634391}
+  m_Center: {x: -0.0020872205, y: 0.10742892, z: 0}
