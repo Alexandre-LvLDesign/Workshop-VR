@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 4889091775528914}
   - component: {fileID: 33544645460321056}
   - component: {fileID: 23341690940246780}
+  - component: {fileID: 65034761493707350}
   m_Layer: 0
   m_Name: Little_table_low
   m_TagString: Untagged
@@ -68,6 +69,7 @@ GameObject:
   - component: {fileID: 4675202371414354}
   - component: {fileID: 33560806212285740}
   - component: {fileID: 23074320275435096}
+  - component: {fileID: 65591884942994034}
   m_Layer: 0
   m_Name: Sun_lounger_low
   m_TagString: Untagged
@@ -214,3 +216,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1905018455505412}
   m_Mesh: {fileID: 4300000, guid: 939e809562125634491a2ea9b13eb1bc, type: 3}
+--- !u!65 &65034761493707350
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875850147246454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3622799, y: 0.108891815, z: 0.36029541}
+  m_Center: {x: -0.000000007450581, y: -0.000000009313226, z: 0.00000046938658}
+--- !u!65 &65591884942994034
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905018455505412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7509472, y: 0.80569476, z: 0.5603017}
+  m_Center: {x: 0, y: 0.40231922, z: 0.00000023841858}
