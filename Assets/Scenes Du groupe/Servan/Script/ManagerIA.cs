@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class ManagerIA : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> salles;
-    private List<GameObject> pointsInteret;
+    private List<GameObject> rooms;
+    private List<GameObject> ptsInt;
     [SerializeField]
     private List<GameObject> ptsIntSalle0;
     [SerializeField]
@@ -17,44 +17,81 @@ public class ManagerIA : MonoBehaviour
     [SerializeField]
     private List<GameObject> ptsIntSalle3;
     [SerializeField]
-    private List<GameObject> listAgent;
+    private List<GameObject> ptsIntSalle4;
+    [SerializeField]
+    private List<GameObject> agentsGameobject;
 
     private GameObject currentAgent;
     private IaPnj currentIaPnj;
     private GameObject nextDestinationSalle;
     private GameObject nextDestinationPointInt;
-    private Vector3 nextObj;
+    private Vector3 nextDest;
 
-    public List<GameObject> pointIntPris;
+    private Animator currentAnimator;
 
     private int rng;
-    private int startRng;
     private int rngSalle;
-    private int compteurPtsInt;
+    [SerializeField]
+    private int WaitingTime;
 
-    void Start ()
+    void Start()
     {
-        pointIntPris = new List<GameObject>();
         rngSalle = 0;
+        if (WaitingTime == 0)
+        {
+            WaitingTime = 5;
+        }
     }
 
-	void Update ()
+    void Update()
     {
         ParcourirAgent();
     }
 
     void ParcourirAgent()
     {
-        foreach (GameObject agent in listAgent)
+        foreach (GameObject agent in agentsGameobject)
         {
             currentAgent = agent;
             currentIaPnj = currentAgent.GetComponent<IaPnj>();
+            currentAnimator = currentAgent.GetComponent<Animator>();
+            if (currentIaPnj.Agent.hasPath && currentAnimator.GetBool("IsWalking") == false)
+            {
+                currentAnimator.SetBool("IsWalking", true);
+            }
             if (!currentIaPnj.Agent.hasPath)
             {
                 VerificationEtatAgent();
-                SetDestinationAgent();
-                nextDestinationSalle = null;
-                nextDestinationPointInt = null;
+                if (currentIaPnj.etat != IaPnj.Etat.Attente)
+                {
+                    currentIaPnj.etat = IaPnj.Etat.Attente;
+                    currentAnimator.SetBool("IsWalking", false);
+                    Debug.Log("is Walking = false");
+                    currentIaPnj.startWaitTime = Time.time;
+                    currentIaPnj.canWait = false;
+                }
+                if (Time.time > currentIaPnj.startWaitTime + WaitingTime && currentIaPnj.etat == IaPnj.Etat.Attente)
+                {
+                    rng = Random.Range(0, 10);
+                    if (rng >= 8)
+                    {
+                        currentIaPnj.etat = IaPnj.Etat.SelectSalle;
+                    }
+                    else
+                    {
+                        currentIaPnj.etat = IaPnj.Etat.PointInteretSalle;
+                    }
+                    currentAnimator.SetBool("IsWalking", true);
+                    currentIaPnj.canWait = true;
+                    SetDestinationAgent();
+                    nextDestinationSalle = null;
+                    nextDestinationPointInt = null;
+                    return;
+                }
+                if (currentIaPnj.etat == IaPnj.Etat.Attente && currentAnimator.GetBool("IsWalking") == true)
+                {
+                    currentAnimator.SetBool("IsWalking", false);
+                }
             }
         }
     }
@@ -78,91 +115,50 @@ public class ManagerIA : MonoBehaviour
 
     void SelectSalle()
     {
-        nextObj = salles[rngSalle].transform.position;
-        currentIaPnj.currentSalle = salles[rngSalle];
+        nextDest = rooms[rngSalle].transform.position;
+        currentIaPnj.currentSalle = rooms[rngSalle];
         rngSalle += 1;
-        if (rngSalle > salles.Count - 1)
+        if (rngSalle > rooms.Count - 1)
         {
             rngSalle = 0;
         }
-        currentIaPnj.etat = IaPnj.Etat.PointInteretSalle;
     }
 
     void SelectPointInt()
     {
         DetectionSalle();
-        rng = Random.Range(0, pointsInteret.Count);
-        startRng = rng;
-        VerificationPtsPris();
-        nextDestinationPointInt = pointsInteret[rng];
-        nextObj = nextDestinationPointInt.transform.position;
-        pointIntPris.Add(nextDestinationPointInt);
+        rng = Random.Range(0, ptsInt.Count);
+        nextDestinationPointInt = ptsInt[rng];
+        nextDest = nextDestinationPointInt.transform.position;
         currentIaPnj.ptsInts = nextDestinationPointInt;
-    }
-
-    void VerificationPtsPris()
-    {
-        compteurPtsInt = 0;
-        foreach (GameObject ptsPris in pointsInteret)
-        {
-            if(pointIntPris.Contains(ptsPris))
-            {
-                compteurPtsInt += 1;
-            }
-        }
-        if(compteurPtsInt >= pointsInteret.Count)
-        {
-            currentIaPnj.etat = IaPnj.Etat.SelectSalle;
-        }
-        else
-        {
-            VerificationPointLibre();
-        }
-    }
-
-    void VerificationPointLibre()
-    {
-        foreach (GameObject ptsPris in pointIntPris)
-        {
-            if(pointsInteret[rng] != ptsPris)
-            {
-                nextDestinationPointInt = pointsInteret[rng];
-                currentIaPnj.etat = IaPnj.Etat.SelectSalle;
-            }
-            else
-            {
-                nextDestinationPointInt = null;
-                rng = Random.Range(0, pointsInteret.Count);
-            }
-        }
-        if(nextDestinationPointInt == null)
-        {
-            currentIaPnj.etat = IaPnj.Etat.SelectSalle;
-        }
     }
 
     void SetDestinationAgent()
     {
-        currentIaPnj.Agent.destination = nextObj;
+        currentIaPnj.Agent.destination = nextDest;
     }
 
     void DetectionSalle()
     {
-        if (currentIaPnj.currentSalle == salles[0])
+        if (currentIaPnj.currentSalle == rooms[0])
         {
-            pointsInteret = ptsIntSalle0;
+            ptsInt = ptsIntSalle0;
         }
-        if (currentIaPnj.currentSalle == salles[1])
+        if (currentIaPnj.currentSalle == rooms[1])
         {
-            pointsInteret = ptsIntSalle1;
+            ptsInt = ptsIntSalle1;
         }
-        if (currentIaPnj.currentSalle == salles[2])
+        if (currentIaPnj.currentSalle == rooms[2])
         {
-            pointsInteret = ptsIntSalle2;
+            ptsInt = ptsIntSalle2;
         }
-        if (currentIaPnj.currentSalle == salles[3])
+        if (currentIaPnj.currentSalle == rooms[3])
         {
-            pointsInteret = ptsIntSalle3;
+            ptsInt = ptsIntSalle3;
+        }
+        if (currentIaPnj.currentSalle == rooms[4])
+        {
+            ptsInt = ptsIntSalle4;
         }
     }
 }
