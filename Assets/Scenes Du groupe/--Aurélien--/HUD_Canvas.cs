@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VRTK;
 
 public class HUD_Canvas : MonoBehaviour
 
@@ -11,50 +12,66 @@ public class HUD_Canvas : MonoBehaviour
     public GameObject Current_obj2;
     public GameObject Current_obj3;
     public GameObject Current_obj4;
-    public GameObject Current_obj5;
 
     private bool obj1 = true;
     private bool obj2 = false;
     private bool obj3 = false;
     private bool obj4 = false;
-    private bool obj5 = false;
 
-    /*public void Update()
+    private bool onObj1 = false;
+    private bool onObj2 = false;
+    private bool onObj3 = false;
+    private bool onObj4 = false;
+
+    public void Update()
     {
-        if(obj1 && "Récupérer câble")
+        if(obj1 && onObj1)
         {
             obj1 = false;
             CogitatorHUD();
             obj2 = true;
         }
 
-        if (obj2 && "Combiner tablette + câble")
+        if (obj2 && onObj2)
         {
             obj2 = false;
             CogitatorHUD();
             obj3 = true;
         }
 
-        if (obj3 && "Trouver casier")
+        if (obj3 && onObj3)
         {
             obj3 = false;
             CogitatorHUD();
             obj4 = true;
         }
 
-        if (obj4 && "Hacker casier")
+        if (obj4 && onObj4)
         {
             obj4 = false;
             CogitatorHUD();
-            obj5 = true;
         }
+    }
 
-        if (obj5 && "Récupérer brochure")
-        {
-            obj5 = false;
-            CogitatorHUD();
-        }
-    }*/
+    public void OnGetCable(object o, SnapDropZoneEventArgs e)
+    {
+        onObj1 = true;
+    }
+
+    public void OnCombineTabletCable(object o, SnapDropZoneEventArgs e)
+    {
+        onObj2 = true;
+    }
+
+    public void OnHackLocker(object o, SnapDropZoneEventArgs e)
+    {
+        onObj3 = true;
+    }
+
+    public void OnGetBrochure(object o, SnapDropZoneEventArgs e)
+    {
+        onObj4 = true;
+    }
 
     public void CogitatorHUD()
     {
@@ -81,11 +98,6 @@ public class HUD_Canvas : MonoBehaviour
             case 4:
                 Current_obj3.SetActive(false);
                 Current_obj4.SetActive(true);
-                break;
-
-            case 5:
-                Current_obj4.SetActive(false);
-                Current_obj5.SetActive(true);
                 break;
         }
     }

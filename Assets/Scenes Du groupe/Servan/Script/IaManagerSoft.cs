@@ -58,7 +58,6 @@ public class IaManagerSoft : MonoBehaviour
             {
                 currentAnimator.SetBool("IsWalking", false);
                 Debug.Log("is Walking = false");
-                //currentIaPnj.Agent.avoidancePriority = 100;
                 currentIaPnj.startWaitTime = Time.time;
                 currentIaPnj.canWait = false;
             }
@@ -66,7 +65,6 @@ public class IaManagerSoft : MonoBehaviour
             {
                 currentAnimator.SetBool("IsWalking", true);
                 Debug.Log("is Walking = true");
-                //currentIaPnj.Agent.avoidancePriority = Random.Range(0, 99);
                 currentIaPnj.canWait = true;
                 VerificationEtatAgent();
                 SetDestinationAgent();
