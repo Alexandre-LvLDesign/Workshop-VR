@@ -33,4 +33,12 @@ public class IaPnj : MonoBehaviour
         etat = Etat.SelectSalle;
         canWait = true;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<IaPnj>())
+        {
+            
+        }
+    }
 }
