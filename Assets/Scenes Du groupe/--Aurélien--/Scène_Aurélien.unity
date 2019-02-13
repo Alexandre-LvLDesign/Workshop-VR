@@ -439,6 +439,56 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 782c5a5471d53c34ba90f1e554937bc7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &329819820
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.762711
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.976
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_Name
+      value: WorkshopVR_Manon_AquariumModulaire_T_LP (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d1ac48fbb46f3b49817dc498abe5545, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+  m_IsPrefabAsset: 0
 --- !u!1 &468089064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1131,56 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b166c381f5564429bad330b06049b7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1122812238
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.762711
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.958
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_Name
+      value: WorkshopVR_Manon_AquariumModulaire_T_LP (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d1ac48fbb46f3b49817dc498abe5545, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1137288322
 Prefab:
   m_ObjectHideFlags: 0
@@ -1574,6 +1674,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1512797528
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.762711
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.468
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d1ac48fbb46f3b49817dc498abe5545, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 714860d01843d124b8b95680e4307316, type: 3}
+  m_IsPrefabAsset: 0
 --- !u!1 &1528254451
 GameObject:
   m_ObjectHideFlags: 0
