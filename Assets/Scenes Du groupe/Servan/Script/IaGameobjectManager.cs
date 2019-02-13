@@ -73,7 +73,7 @@ public class IaGameobjectManager : MonoBehaviour
                 if (Time.time > currentIaPnj.startWaitTime + WaitingTime && currentIaPnj.etat == IaPnj.Etat.Attente)
                 {
                     rng = Random.Range(0, 10);
-                    if (rng >= 8)
+                    if (rng >= 7)
                     {
                         currentIaPnj.etat = IaPnj.Etat.SelectSalle;
                     }
