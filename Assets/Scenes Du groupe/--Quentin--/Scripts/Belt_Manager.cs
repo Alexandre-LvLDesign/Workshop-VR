@@ -6,7 +6,7 @@ using VRTK;
 public class Belt_Manager : MonoBehaviour {
 
     [SerializeField] VRTK_TransformFollow transformFollowScript;
-    public Transform transformToFollow;
+    
 
     private void OnEnable()
     {
@@ -17,8 +17,17 @@ public class Belt_Manager : MonoBehaviour {
 	IEnumerator MyCouroutine()
     {
         yield return null;
+        Transform transformToFollow;
+
         transformToFollow = VRTK_DeviceFinder.DeviceTransform(VRTK_DeviceFinder.Devices.Headset);
-        VRTK_SDKSetup sdksetup = transformToFollow.GetComponentInParent<VRTK_SDKSetup>();
-        transformFollowScript.gameObjectToFollow = sdksetup.transform.GetChild(0).gameObject;
+
+        if (VRTK_DeviceFinder.GetHeadsetType() == SDK_BaseHeadset.HeadsetType.Simulator)
+        {
+            VRTK_SDKSetup sdksetup = transformToFollow.GetComponentInParent<VRTK_SDKSetup>();
+            transformToFollow = sdksetup.transform.GetChild(0);
+            transform.position = new Vector3(transformToFollow.transform.position.x, transformToFollow.transform.position.y -10.0f, transformToFollow.transform.position.z);
+        }
+        
+        transformFollowScript.gameObjectToFollow = transformToFollow.gameObject;
     }
 }
