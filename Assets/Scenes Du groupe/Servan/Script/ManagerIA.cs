@@ -6,18 +6,8 @@ using UnityEngine.AI;
 public class ManagerIA : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> rooms;
     private List<GameObject> ptsInt;
-    [SerializeField]
-    private List<GameObject> ptsIntSalle0;
-    [SerializeField]
-    private List<GameObject> ptsIntSalle1;
-    [SerializeField]
-    private List<GameObject> ptsIntSalle2;
-    [SerializeField]
-    private List<GameObject> ptsIntSalle3;
-    [SerializeField]
-    private List<GameObject> ptsIntSalle4;
+
     [SerializeField]
     private List<GameObject> agentsGameobject;
 
@@ -30,16 +20,23 @@ public class ManagerIA : MonoBehaviour
     private Animator currentAnimator;
 
     private int rng;
-    private int rngSalle;
     [SerializeField]
     private int WaitingTime;
 
     void Start()
     {
-        rngSalle = 0;
+        rng = 0;
         if (WaitingTime == 0)
         {
             WaitingTime = 5;
+        }
+        foreach (GameObject agent in agentsGameobject)
+        {
+            Debug.Log("rng  " + rng);
+            Debug.Log("ptsint count  " + ptsInt.Count);
+            agent.GetComponent<IaPnj>().Agent.destination = ptsInt[rng].transform.position;
+            rng++;
+            rng = rng % ptsInt.Count;
         }
     }
 
@@ -59,12 +56,13 @@ public class ManagerIA : MonoBehaviour
             {
                 currentAnimator.SetBool("IsWalking", true);
             }
-            if (!currentIaPnj.Agent.hasPath)
+            if (currentIaPnj.Agent.remainingDistance < 1.5f)
             {
                 VerificationEtatAgent();
                 if (currentIaPnj.etat != IaPnj.Etat.Attente)
                 {
                     currentIaPnj.etat = IaPnj.Etat.Attente;
+                    currentIaPnj.Agent.destination = currentAgent.transform.position;
                     currentAnimator.SetBool("IsWalking", false);
                     Debug.Log("is Walking = false");
                     currentIaPnj.startWaitTime = Time.time;
@@ -72,15 +70,7 @@ public class ManagerIA : MonoBehaviour
                 }
                 if (Time.time > currentIaPnj.startWaitTime + WaitingTime && currentIaPnj.etat == IaPnj.Etat.Attente)
                 {
-                    rng = Random.Range(0, 10);
-                    if (rng >= 8)
-                    {
-                        currentIaPnj.etat = IaPnj.Etat.SelectSalle;
-                    }
-                    else
-                    {
-                        currentIaPnj.etat = IaPnj.Etat.PointInteretSalle;
-                    }
+                    currentIaPnj.etat = IaPnj.Etat.PointInteretSalle;
                     currentAnimator.SetBool("IsWalking", true);
                     currentIaPnj.canWait = true;
                     SetDestinationAgent();
@@ -105,28 +95,14 @@ public class ManagerIA : MonoBehaviour
             case IaPnj.Etat.PointInteretSalle:
                 SelectPointInt();
                 break;
-            case IaPnj.Etat.SelectSalle:
-                SelectSalle();
-                break;
             default:
                 break;
         }
     }
 
-    void SelectSalle()
-    {
-        nextDest = rooms[rngSalle].transform.position;
-        currentIaPnj.currentSalle = rooms[rngSalle];
-        rngSalle += 1;
-        if (rngSalle > rooms.Count - 1)
-        {
-            rngSalle = 0;
-        }
-    }
-
     void SelectPointInt()
     {
-        DetectionSalle();
+        Random.seed = System.DateTime.Now.Millisecond;
         rng = Random.Range(0, ptsInt.Count);
         nextDestinationPointInt = ptsInt[rng];
         nextDest = nextDestinationPointInt.transform.position;
@@ -136,29 +112,5 @@ public class ManagerIA : MonoBehaviour
     void SetDestinationAgent()
     {
         currentIaPnj.Agent.destination = nextDest;
-    }
-
-    void DetectionSalle()
-    {
-        if (currentIaPnj.currentSalle == rooms[0])
-        {
-            ptsInt = ptsIntSalle0;
-        }
-        if (currentIaPnj.currentSalle == rooms[1])
-        {
-            ptsInt = ptsIntSalle1;
-        }
-        if (currentIaPnj.currentSalle == rooms[2])
-        {
-            ptsInt = ptsIntSalle2;
-        }
-        if (currentIaPnj.currentSalle == rooms[3])
-        {
-            ptsInt = ptsIntSalle3;
-        }
-        if (currentIaPnj.currentSalle == rooms[4])
-        {
-            ptsInt = ptsIntSalle4;
-        }
     }
 }
