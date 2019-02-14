@@ -198,8 +198,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4485032899262852}
-  - component: {fileID: 114652824717297174}
   - component: {fileID: 114434512460150606}
+  - component: {fileID: 114238589966088590}
   m_Layer: 0
   m_Name: Belt_Prefab
   m_TagString: Untagged
@@ -660,6 +660,29 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &114238589966088590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667659062178852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5040c2eaa9ff147b80ded004191c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToFollow: {fileID: 0}
+  gameObjectToChange: {fileID: 1667659062178852}
+  followsPosition: 1
+  smoothsPosition: 0
+  maxAllowedPerFrameDistanceDifference: 0.003
+  followsRotation: 1
+  smoothsRotation: 0
+  maxAllowedPerFrameAngleDifference: 1.5
+  followsScale: 0
+  smoothsScale: 0
+  maxAllowedPerFrameSizeDifference: 0.003
+  _moment: 3
 --- !u!114 &114274012353951042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18005,7 +18028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260b9fed0cfae77498b7936c8436ace9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transformFollowScript: {fileID: 114652824717297174}
+  transformFollowScript: {fileID: 114238589966088590}
   transformToFollow: {fileID: 0}
 --- !u!114 &114524779356793246
 MonoBehaviour:
@@ -18030,29 +18053,6 @@ MonoBehaviour:
   displayDropZoneInEditor: 1
   defaultSnappedInteractableObject: {fileID: 0}
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114652824717297174
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1667659062178852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe5040c2eaa9ff147b80ded004191c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameObjectToFollow: {fileID: 0}
-  gameObjectToChange: {fileID: 1667659062178852}
-  followsPosition: 1
-  smoothsPosition: 0
-  maxAllowedPerFrameDistanceDifference: 0.003
-  followsRotation: 0
-  smoothsRotation: 0
-  maxAllowedPerFrameAngleDifference: 1.5
-  followsScale: 0
-  smoothsScale: 0
-  maxAllowedPerFrameSizeDifference: 0.003
-  _moment: 3
 --- !u!114 &114802945594154472
 MonoBehaviour:
   m_ObjectHideFlags: 1
