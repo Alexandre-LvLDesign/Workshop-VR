@@ -85,9 +85,9 @@ public class IaManagerSoft : MonoBehaviour
             case IaPnj.Etat.PointInteretSalle:
                 SelectPointInt();
                 break;
-            case IaPnj.Etat.SelectSalle:
-                SelectSalle();
-                break;
+            //case IaPnj.Etat.SelectSalle:
+                //SelectSalle();
+                //break;
             default:
                 break;
         }
@@ -110,7 +110,7 @@ public class IaManagerSoft : MonoBehaviour
         rng = Random.Range(0, 10);
         if (rng >= 8)
         {
-            currentIaPnj.etat = IaPnj.Etat.SelectSalle;
+            //currentIaPnj.etat = IaPnj.Etat.SelectSalle;
             return;
         }
         DetectionSalle();

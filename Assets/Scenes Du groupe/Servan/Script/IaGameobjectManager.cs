@@ -75,7 +75,7 @@ public class IaGameobjectManager : MonoBehaviour
                     rng = Random.Range(0, 10);
                     if (rng >= 7)
                     {
-                        currentIaPnj.etat = IaPnj.Etat.SelectSalle;
+                        //currentIaPnj.etat = IaPnj.Etat.SelectSalle;
                     }
                     else
                     {
@@ -105,9 +105,9 @@ public class IaGameobjectManager : MonoBehaviour
             case IaPnj.Etat.PointInteretSalle:
                 SelectPointInt();
                 break;
-            case IaPnj.Etat.SelectSalle:
-                SelectSalle();
-                break;
+            //case IaPnj.Etat.SelectSalle:
+                //SelectSalle();
+                //break;
             default:
                 break;
         }

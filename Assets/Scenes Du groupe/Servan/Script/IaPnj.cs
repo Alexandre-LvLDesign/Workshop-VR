@@ -20,17 +20,19 @@ public class IaPnj : MonoBehaviour
     public enum Etat
     {
         Attente,
-        SelectSalle,
         PointInteretSalle,
     }
     public Etat etat;
 
-    void Start()
+    private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
+    }
+
+    void Start()
+    {
         currentSalle = null;
         ptsInts = null;
-        etat = Etat.SelectSalle;
         canWait = true;
     }
 }
