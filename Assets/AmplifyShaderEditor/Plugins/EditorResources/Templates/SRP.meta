@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP.meta
 guid: c269632700fa93049aa82d84d1527e6b
+=======
+guid: cc9e432e1a0a4764f80870c080173cb7
+>>>>>>> 17c9ddb6c667a8bf62f926fbadc2c5fe161aaeda:Assets/AmplifyShaderEditor/Plugins/EditorResources/Templates/SRP.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

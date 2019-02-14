@@ -18,6 +18,7 @@ public class Belt_Manager : MonoBehaviour {
     {
         yield return null;
         transformToFollow = VRTK_DeviceFinder.DeviceTransform(VRTK_DeviceFinder.Devices.Headset);
-        transformFollowScript.gameObjectToFollow = transformToFollow.gameObject;
+        VRTK_SDKSetup sdksetup = transformToFollow.GetComponentInParent<VRTK_SDKSetup>();
+        transformFollowScript.gameObjectToFollow = sdksetup.transform.GetChild(0).gameObject;
     }
 }
