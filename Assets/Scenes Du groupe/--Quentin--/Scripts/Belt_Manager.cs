@@ -25,7 +25,6 @@ public class Belt_Manager : MonoBehaviour {
         {
             VRTK_SDKSetup sdksetup = transformToFollow.GetComponentInParent<VRTK_SDKSetup>();
             transformToFollow = sdksetup.transform.GetChild(0);
-            transform.position = new Vector3(transformToFollow.transform.position.x, transformToFollow.transform.position.y -10.0f, transformToFollow.transform.position.z);
         }
         
         transformFollowScript.gameObjectToFollow = transformToFollow.gameObject;

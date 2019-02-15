@@ -11,5 +11,6 @@ public class Belt_TransformFollow : VRTK_TransformFollow {
 
         rotation.y = newRotation.eulerAngles.y;
         transformToChange.rotation = Quaternion.Euler(rotation);
+        transform.position = new Vector3(transformToFollow.transform.position.x, transformToFollow.transform.position.y - 10.0f, transformToFollow.transform.position.z);
     }
 }
