@@ -7,11 +7,13 @@ using VRTK;
 public class HUD_Canvas : MonoBehaviour
 
 {
+    public Animator lockerAnimator;
+
     public int HUD_change = 1;
-    public GameObject Current_obj;
-    public GameObject Current_obj2;
-    public GameObject Current_obj3;
-    public GameObject Current_obj4;
+    //public GameObject Current_obj;
+    //public GameObject Current_obj2;
+    //public GameObject Current_obj3;
+    //public GameObject Current_obj4;
 
     private bool obj1 = true;
     private bool obj2 = false;
@@ -28,28 +30,29 @@ public class HUD_Canvas : MonoBehaviour
         if(obj1 && onObj1)
         {
             obj1 = false;
-            CogitatorHUD();
+            //CogitatorHUD();
             obj2 = true;
         }
 
         if (obj2 && onObj2)
         {
             obj2 = false;
-            CogitatorHUD();
+            //CogitatorHUD();
             obj3 = true;
         }
 
         if (obj3 && onObj3)
         {
             obj3 = false;
-            CogitatorHUD();
+            lockerAnimator.SetTrigger("Open");
+            //CogitatorHUD();
             obj4 = true;
         }
 
         if (obj4 && onObj4)
         {
             obj4 = false;
-            CogitatorHUD();
+            //CogitatorHUD();
         }
     }
 
@@ -73,32 +76,32 @@ public class HUD_Canvas : MonoBehaviour
         onObj4 = true;
     }
 
-    public void CogitatorHUD()
-    {
-        HUD_change++;
-        Debug.Log(HUD_change);
+    //public void CogitatorHUD()
+    //{
+    //    HUD_change++;
+    //    Debug.Log(HUD_change);
 
-        switch (HUD_change)
-        {
-            //case 1 pas utile !! Jamais récupéré !!
-            case 1:
-                Current_obj.SetActive(true);
-                break;
+    //    switch (HUD_change)
+    //    {
+    //        //case 1 pas utile !! Jamais récupéré !!
+    //        case 1:
+    //            Current_obj.SetActive(true);
+    //            break;
 
-            case 2:
-                Current_obj.SetActive(false);
-                Current_obj2.SetActive(true);
-                break;
+    //        case 2:
+    //            Current_obj.SetActive(false);
+    //            Current_obj2.SetActive(true);
+    //            break;
 
-            case 3:
-                Current_obj2.SetActive(false);
-                Current_obj3.SetActive(true);
-                break;
+    //        case 3:
+    //            Current_obj2.SetActive(false);
+    //            Current_obj3.SetActive(true);
+    //            break;
 
-            case 4:
-                Current_obj3.SetActive(false);
-                Current_obj4.SetActive(true);
-                break;
-        }
-    }
+    //        case 4:
+    //            Current_obj3.SetActive(false);
+    //            Current_obj4.SetActive(true);
+    //            break;
+    //    }
+    //}
 }

@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 4485032899262852}
   - component: {fileID: 114434512460150606}
   - component: {fileID: 114689804547517716}
+  - component: {fileID: 114813321432263494}
   m_Layer: 0
   m_Name: Belt_Prefab
   m_TagString: Untagged
@@ -578,7 +579,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 76008b803511a8e4c91d6f9bacc10161, type: 2}
+  - {fileID: 2100000, guid: 63bc709042ef0b2498ddf58ef48fec2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18228,6 +18229,19 @@ MonoBehaviour:
   displayDropZoneInEditor: 1
   defaultSnappedInteractableObject: {fileID: 0}
   defaultSnappedObject: {fileID: 0}
+--- !u!114 &114813321432263494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667659062178852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9217dd5d28b84947b3cea859b73b9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockerAnimator: {fileID: 0}
+  HUD_change: 1
 --- !u!135 &135127554915530614
 SphereCollider:
   m_ObjectHideFlags: 1
